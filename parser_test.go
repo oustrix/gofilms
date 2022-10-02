@@ -41,15 +41,15 @@ func TestParseMovie(t *testing.T) {
 		id:            "0133093",
 		trailer:       "testing",
 		image:         "testing",
-		actors: []Actor{{"testing11", "testing12", "testing13"},
-			{"testing21", "testing22", "testing23"},
-			{"testing31", "testing32", "testing33"}},
-		directors: []Director{{"testing11", "testing12", "testing13"},
-			{"testing21", "testing22", "testing23"},
-			{"testing31", "testing32", "testing33"}},
-		creators: []Creator{{"testing11", "testing12", "testing13"},
-			{"testing21", "testing22", "testing23"},
-			{"testing31", "testing32", "testing33"}},
+		actors: []Actor{{"testing11", "https://www.imdb.comtesting12", "testing13"},
+			{"testing21", "https://www.imdb.comtesting22", "testing23"},
+			{"testing31", "https://www.imdb.comtesting32", "testing33"}},
+		directors: []Director{{"testing11", "https://www.imdb.comtesting12", "testing13"},
+			{"testing21", "https://www.imdb.comtesting22", "testing23"},
+			{"testing31", "https://www.imdb.comtesting32", "testing33"}},
+		creators: []Creator{{"testing11", "https://www.imdb.comtesting12", "testing13"},
+			{"testing21", "https://www.imdb.comtesting22", "testing23"},
+			{"testing31", "https://www.imdb.comtesting32", "testing33"}},
 	}
 	testBody := `
 		<html lang="en">
@@ -209,9 +209,9 @@ func TestParseActors(t *testing.T) {
 		},
 	}
 	expectedActors := []Actor{
-		{"actor", "actor1", "actor2"},
-		{"actor", "actor3", "actor4"},
-		{"actor", "actor5", "actor6"},
+		{"actor", "https://www.imdb.comactor1", "actor2"},
+		{"actor", "https://www.imdb.comactor3", "actor4"},
+		{"actor", "https://www.imdb.comactor5", "actor6"},
 	}
 	actualActors := parseActors(testJSON)
 	require.Equal(t, expectedActors, actualActors)
@@ -238,9 +238,9 @@ func TestParseDirectors(t *testing.T) {
 		},
 	}
 	expectedDirectors := []Director{
-		{"director", "director1", "director2"},
-		{"director", "director3", "director4"},
-		{"director", "director5", "director6"},
+		{"director", "https://www.imdb.comdirector1", "director2"},
+		{"director", "https://www.imdb.comdirector3", "director4"},
+		{"director", "https://www.imdb.comdirector5", "director6"},
 	}
 	actualDirectors := parseDirectors(testJSON)
 	require.Equal(t, expectedDirectors, actualDirectors)
@@ -267,9 +267,9 @@ func TestParseCreators(t *testing.T) {
 		},
 	}
 	expectedCreators := []Creator{
-		{"creator", "creator1", "creator2"},
-		{"creator", "creator3", "creator4"},
-		{"creator", "creator5", "creator6"},
+		{"creator", "https://www.imdb.comcreator1", "creator2"},
+		{"creator", "https://www.imdb.comcreator3", "creator4"},
+		{"creator", "https://www.imdb.comcreator5", "creator6"},
 	}
 	actualCreators := parseCreators(testJSON)
 	require.Equal(t, expectedCreators, actualCreators)
