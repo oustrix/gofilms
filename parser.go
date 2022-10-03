@@ -102,7 +102,7 @@ func parseActors(json map[string]interface{}) []Actor {
 	return actors
 }
 
-// parseCreators parses the directors from the JSON, where they are stored as a slice of maps
+// parseDirectors parses the directors from the JSON, where they are stored as a slice of maps
 func parseDirectors(json map[string]interface{}) []Director {
 	var directors []Director
 	for _, director := range json["director"].([]interface{}) {
